@@ -3,11 +3,11 @@ import type { NarrowedContext, Scenes } from "telegraf";
 
 export interface SessionData extends Scenes.WizardSessionData {
   order?: {
-    address: string;
-    phone: string;
+    address?: string;
+    phone?: string;
   };
 }
 
-export interface BotContext extends Scenes.WizardContext<SessionData> {}
+export type BotContext = Scenes.WizardContext<SessionData>;
 
 export type TextContext = NarrowedContext<BotContext, Update.MessageUpdate<Message.TextMessage>>;
